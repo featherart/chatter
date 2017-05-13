@@ -1,8 +1,8 @@
 use Mix.Config
 
-config :chatter, TestApp.Endpoint,
+config :chatter, Chatter.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [scheme: "https", host: "floating-brook-28777", port: 443],
+  url: [scheme: "https", host: "enigmatic-fortress-52590.herokuapp.com/", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE")
@@ -12,7 +12,7 @@ config :logger, level: :info
 
 
 # Configure your database
-config :chatter, TestApp.Repo,
+config :chatter, Chatter.Repo,
   adapter: Ecto.Adapters.Postgres,
   hostname: System.get_env("NEW_DATABASE_URL"),
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
