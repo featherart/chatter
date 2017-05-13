@@ -2,7 +2,7 @@ use Mix.Config
 
 config :chatter, Chatter.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [scheme: "https", host: "enigmatic-fortress-52590.herokuapp.com/", port: 443],
+  url: [scheme: "https", host: "elixir-chatter.herokuapp.com/", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE")
